@@ -4,9 +4,9 @@ import "./style.css";
 function Footer() {
     return (
         <div>
-            <nav class="navbar fixed-bottom navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">BetHub<br></br> Beat the Bookies</a>
+            <nav className="navbar fixed-bottom navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="www.google.com">BetHub<br></br> Beat the Bookies</a>
                 </div>
             </nav>
 

@@ -3,26 +3,26 @@ import React from "react";
 function SignUp() {
     return (
         <div>
-            <div class="card text-center">
-                <div class="card-header">
+            <div className="card text-center">
+                <div className="card-header">
                     Welcome to BetHub
   </div>
-                <div class="card-body">
-                    <h5 class="card-title">Please Fill in Your Details Below to get Started </h5>
-                    <p class="card-text">In Just Seconds you Could be Given Access to all the Best Odds Available on the Market </p>
+                <div className="card-body">
+                    <h5 className="card-title">Please Fill in Your Details Below to get Started </h5>
+                    <p className="card-text">In Just Seconds you Could be Given Access to all the Best Odds Available on the Market </p>
                     <form>
                         <input
                             type="text"
                             placeholder="Username">
                         </input>
                         <input
-                            type="text"
+                            type="password"
                             placeholder="Password">
                         </input>
                     </form>
-                    <a href="#" class="btn btn-primary">Sign Up</a>
+                    <button className="btn btn-primary">Sign Up</button>
                 </div>
-                <div class="card-footer text-muted">
+                <div className="card-footer text-muted">
                     Beat the Bookies
   </div>
             </div>

@@ -1,9 +1,12 @@
 import React from "react";
+import BookieImagesAndContent from "../components/BookieImagesAndContent";
+
+
 
 function Home() {
     return (
         <div>
-            <h1> Welcome to the Home Page </h1>
+            <BookieImagesAndContent />
 
         </div>
     )
