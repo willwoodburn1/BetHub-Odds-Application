@@ -28,6 +28,8 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "react-slick": "^0.27.14",
     "sequelize": "^6.3.5"
   }
 }
