@@ -1,0 +1,17 @@
+.cardUpcomingMatches {
+    width: 25%;
+    margin-top: 50px;
+    text-align: center;
+    border: 2px solid grey;
+    margin-bottom: 70px;
+}
+
+
+.upcoming-matches-card-body {
+    border: 1px solid blue;
+    background-color: red;
+    color: white;
+}
+
+
+ 

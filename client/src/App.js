@@ -5,17 +5,25 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp"
 import Home from "./pages/Home";
-// import CarouselOfBookies from "./components/CarouselOfBookies"
+import Odds from "./pages/Odds";
+import RecordBets from "./pages/RecordBets";
+
+
+
 
 function App() {
+
   return (
 
     <Router>
       <div>
         <Header />
-        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/home" component={Home} />
+        <Route path="/odds" component={Odds} />
+        <Route exact path="/recordbets" component={RecordBets} />
+
 
         <Footer />
       </div>

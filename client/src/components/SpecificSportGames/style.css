@@ -1,0 +1,28 @@
+.specificSportsMatchesList {
+    width: 25%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#oddsContent {
+    display: flex;
+}
+
+.h2hOddsData {
+    margin-top: 40px;
+    margin-left: 100px;
+    text-align: center;
+}
+
+#h2hTitle {
+    text-decoration: underline;
+}
+
+.totalsOddsData {
+    margin-left: 90px;
+    margin-top: 38px ;
+}
+
+#totalsOddsTitle {
+    text-decoration: underline;
+}

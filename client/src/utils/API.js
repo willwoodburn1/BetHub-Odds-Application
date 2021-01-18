@@ -1,11 +1,34 @@
 import axios from "axios";
 
-const BASEURL = "https://api.the-odds-api.com/v3/sports/?apiKey=";
-const APIKEY = "61b67a84dcb103f72677a50d5fd05411";
+export default {
+    // Gets all bets placed
+    getBets: function () {
+        return axios.get("/api/bets")
+    },
+    // Gets the bet with given id (the one selected)
+    getBet: function (id) {
+        return axios.get("/api/bets/" + id);
+    },
+    // Delete the bet with given id
+    deleteBet: function (id) {
+        return axios.delete("/api/bets/" + id);
+    },
+    // Saves a new bet to the database
+    saveBet: function (betData) {
+        return axios.post("/api/bets", betData);
+    }
+};
 
-export function getAllSports() {
-    return axios.get(BASEURL + APIKEY)
-}
+
+
+
+
+// const BASEURL = "https://api.the-odds-api.com/v3/sports/?apiKey=";
+// const APIKEY = "61b67a84dcb103f72677a50d5fd05411";
+
+// export function getAllSports() {
+//     return axios.get(BASEURL + APIKEY)
+// }
 
 // export default {
 //     // Returns all the sports

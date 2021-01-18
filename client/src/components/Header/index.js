@@ -1,5 +1,6 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -12,9 +13,21 @@ function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-link active" aria-current="page" href="www.google.com">Home</a>
-                            <a className="nav-link" href="www.google.com">Features</a>
-                            <a className="nav-link" href="www.google.com">Pricing</a>
+                            <Link
+                                to="/home"
+                                id="headerHomePageLink"
+                                className={window.location.pathname === "/home"}
+                            >
+                                <a> Home </a>
+                            </Link>
+                            <Link
+                                to="/recordbets"
+                                id="headerRecordBetsLink"
+                                className={window.location.pathname === "/recordbets"}
+                            >
+                                <a> Record Bets </a>
+                            </Link>
+
 
                         </div>
                     </div>

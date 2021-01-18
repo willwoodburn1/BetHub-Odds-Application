@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 3001;
 
-const db = requie("./models")
+const db = require("./models")
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +26,7 @@ app.use(compression());
 
 // Routes
 require("./controllers/user-controller")(app);
+require("./controllers/betsController")(app);
 
 
 // app.listen(PORT, function () {

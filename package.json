@@ -30,6 +30,7 @@
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

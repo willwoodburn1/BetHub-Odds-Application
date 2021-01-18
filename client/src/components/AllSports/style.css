@@ -1,0 +1,21 @@
+#allSportsDiv {
+    position: absolute;
+    width: 65%;
+    top: 275px;
+    left: 420px;
+}
+
+#sportsTitles {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sportClickIcon {
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    margin: 14px;
+    margin-top: 18px;
+    padding-top: 18px;
+    padding-bottom: -18px;
+}

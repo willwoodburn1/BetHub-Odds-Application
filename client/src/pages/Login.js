@@ -34,13 +34,13 @@ function Login() {
                         to="/home"
                         id="homePageLink"
                         className={window.location.pathname === "/home"}>
-                        <button> Login</button >
+                        <button type="submit"> Login</button >
                     </Link>
                     <Link
                         to="/signup"
                         id="signupLink"
                         className={window.location.pathname === "/signup"}>
-                        <button> SignUp</button >
+                        <button type="submit"> SignUp</button >
                     </Link>
                 </div>
                 <div className="card-footer text-muted">
