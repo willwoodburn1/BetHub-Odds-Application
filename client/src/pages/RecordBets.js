@@ -1,10 +1,11 @@
 import React from "react";
 import Form from "../components/Form";
+import Jumbotron from "../components/Jumbotron";
 
 function RecordBets() {
     return (
         <div>
-            <h3> Record Your Placed Bets Here </h3>
+            <Jumbotron />
             <Form />
         </div>
 

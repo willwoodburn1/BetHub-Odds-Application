@@ -19,10 +19,13 @@ module.exports = function (app) {
             bookMaker: req.body.bookMaker,
             notes: req.body.notes
         }).then(function (dbBet) {
+            console.log(dbBet);
             res.json(dbBet);
+
         })
             .catch(function (err) {
-                res, json(err);
+                console.log(err);
+                res.json(err);
             });
     });
 

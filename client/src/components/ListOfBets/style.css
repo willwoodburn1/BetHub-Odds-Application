@@ -1,0 +1,7 @@
+#listOfPastBetsDiv {
+    border: 1px solid green;
+    position: absolute;
+    top: 58%;
+    right: 1%;
+    width: 400px;
+}

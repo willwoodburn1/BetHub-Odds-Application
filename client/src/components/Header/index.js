@@ -18,14 +18,14 @@ function Header() {
                                 id="headerHomePageLink"
                                 className={window.location.pathname === "/home"}
                             >
-                                <a> Home </a>
+                                <a id="headerHomeBtn"> Home </a>
                             </Link>
                             <Link
                                 to="/recordbets"
                                 id="headerRecordBetsLink"
                                 className={window.location.pathname === "/recordbets"}
                             >
-                                <a> Record Bets </a>
+                                <a id="headerRecordBetsBtn"> Record Bets </a>
                             </Link>
 
 

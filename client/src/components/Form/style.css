@@ -1,3 +1,9 @@
 #potentialWinningsText {
     font-size: 20px;
 }
+
+
+.betsInputForm {
+    width: 60%;
+    margin-left: 30px;
+}

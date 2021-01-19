@@ -1,4 +1,6 @@
-#footer {
-    position: absolute;
-    bottom: 0px;
+#footerNav {
+    position: relative;
+    bottom: 0;
 }
+
+
