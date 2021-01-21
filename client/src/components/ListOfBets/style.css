@@ -1,7 +1,26 @@
-#listOfPastBetsDiv {
-    border: 1px solid green;
+
+.placedBetsList {
     position: absolute;
-    top: 58%;
+    top: 66%;
     right: 1%;
-    width: 400px;
+    width: 500px;
+    max-height: 340px;
+    overflow: hidden;
+    overflow-y:scroll;
 }
+
+#resultdBetsHeader {
+    position: absolute;
+    top: 55%;
+    right: 7%;
+   
+
+}
+
+
+
+
+
+
+
+

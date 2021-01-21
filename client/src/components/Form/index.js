@@ -3,6 +3,7 @@ import "./style.css";
 import API from "../../utils/API";
 import ListOfBets from "../ListOfBets";
 
+
 function Form() {
 
     const [wagered, setWagered] = useState(0);
@@ -30,14 +31,14 @@ function Form() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        console.log(formObject.selection, formObject.opponent, formObject.winnings)
-        if (formObject.selection && formObject.opponent && multiplyOdds()) {
+        if (formObject.selection && formObject.opponent && multiplyOdds() && formObject.outcome) {
             API.saveBet({
                 selection: formObject.selection,
                 opponent: formObject.opponent,
                 winnings: multiplyOdds(),
                 betType: formObject.betType,
-                bookMaker: formObject.bookMaker
+                bookMaker: formObject.bookMaker,
+                outcome: formObject.outcome
             })
                 .then(res => loadBets())
                 .catch(err => console.log(err));
@@ -55,6 +56,7 @@ function Form() {
     console.log(bets)
     return (
         <div>
+            <h1 id="recordBetsTitle"> Record Your Previous Bet Stakes Here</h1>
             <div className="row">
                 <form className="betsInputForm" onSubmit={handleFormSubmit}>
                     <div className="row">
@@ -106,10 +108,17 @@ function Form() {
                             <option value="totals">Totals(Overs/Unders)</option>
                         </select>
                     </div>
+                    <div className="input-field col s4">
+                        <select className="form-select" aria-label="Default select example" name="outcome" onChange={handleInputChange}>
+                            <option selected>Outcome</option>
+                            <option value="win">Win</option>
+                            <option value="loss">Loss</option>
+                        </select>
+                    </div>
 
                     <button
                         type="submit"
-                        disabled={!formObject.selection || !formObject.opponent || !wagered || !oddReceived}
+                        disabled={!formObject.selection || !formObject.opponent || !wagered || !oddReceived || !formObject.outcome}
                         className="btn btn-outline-success"
                     >
                         Log Bet

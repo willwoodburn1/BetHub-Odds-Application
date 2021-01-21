@@ -14,9 +14,11 @@ module.exports = function (app) {
         db.Bet.create({
             selection: req.body.selection,
             opponent: req.body.opponent,
+            // createdAt: req.body.createdAt,
             winnings: req.body.winnings,
             betType: req.body.betType,
             bookMaker: req.body.bookMaker,
+            outcome: req.body.outcome,
             notes: req.body.notes
         }).then(function (dbBet) {
             console.log(dbBet);

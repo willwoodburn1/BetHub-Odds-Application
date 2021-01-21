@@ -1,36 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
 
+
 function ListOfBets({ placedBets }) {
+
+
     return (
-        <div id="listOfPastBetsDiv">
-            <h3> Past Bets Placed </h3>
-            {placedBets.map(bet => (
-                <div class="list-group" key={bet.id}>
+        <>
+            <h1 id="resultdBetsHeader"> View Resulted Bets Here</h1>
+            <div className="placedBetsList">
+                {placedBets.map(bet => (
+
+                    < div className="list-group" key={bet.id} >
+
+                        <Link to={{
+                            pathname: "/bets/" + bet.id,
+                            greeting: "hello there how are you"
+                        }}>
+
+                            <div>
+                                <ul className="list-group" >
+
+                                    <li className="betPlacedItem list-group-item"> {bet.selection} vs {bet.opponent}
+                                        <h6> {bet.outcome} : ${bet.winnings} </h6>
+                                        <h6> Placed On :  </h6>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </Link>
 
 
-                    <Link to={"/bets/" + bet.id}>
-
-                        <div className="collection">
-                            <a className="collection-item">
-                                <strong>
-                                    {bet.selection} vs {bet.opponent} <br></br> Outcome: ${bet.winnings}
-                                </strong>
-                            </a>
-
-                        </div>
-
-                    </Link>
+                    </div>
 
 
-                </div>
-
-            ))}
+                ))}
 
 
-        </div>
+            </div>
+        </>
     )
 
 }

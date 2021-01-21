@@ -14,6 +14,12 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        // createdAt: {
+        //     type: DataType.DATE,
+        //     get() {
+        //         return moment(this.getDataValue('createdAt')).format('DD/MM/YYYY h:mm:ss');
+        //     }
+        // },
         winnings: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -26,6 +32,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         notes: {
             type: DataTypes.TEXT
+        },
+        outcome: {
+            type: DataTypes.STRING
         }
     });
     return Bet;
