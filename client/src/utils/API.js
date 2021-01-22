@@ -16,6 +16,10 @@ export default {
     // Saves a new bet to the database
     saveBet: function (betData) {
         return axios.post("/api/bets", betData);
+    },
+
+    updateBet: function (betData) {
+        return axios.put("/api/bets/", betData);
     }
 };
 

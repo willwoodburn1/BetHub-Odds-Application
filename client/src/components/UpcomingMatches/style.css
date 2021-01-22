@@ -4,13 +4,16 @@
     text-align: center;
     border: 2px solid grey;
     margin-bottom: 70px;
+    margin-left: 10px;
 }
 
 
 .upcoming-matches-card-body {
     border: 1px solid blue;
-    background-color: red;
+    background-color: grey;
     color: white;
+    height: 100px;
+    padding-top: 20px;
 }
 
 

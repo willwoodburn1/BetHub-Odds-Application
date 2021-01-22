@@ -6,7 +6,7 @@ import "./style.css";
 function AllSports() {
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=dcc8c1b8330bf52bc329e71cda68d7bf")
+        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=90f33c13d6dfe00fd515fcd29d8630f6")
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -24,20 +24,25 @@ function AllSports() {
             <div>
                 {sports.map(sport => {
 
-                    return <Link
-                        to={"/odds/" + sport.key}
-                        id="oddsPageLink"
-                        className={window.location.pathname === "/odds" + sport.key}
+                    if (sport.key !== "soccer_belgium_first_div") {
 
-                    >
-                        {/* <SpecificSportGames name={sport.key} /> */}
 
-                        <span id="sportClickIcon"
-                            className="badge rounded-pill bg-success"
+
+                        return <Link to={{
+                            pathname: "/odds/" + sport.key,
+                            state: {
+                                sport
+                            },
+                        }}
                         >
-                            {sport.title} <br></br> {sport.details}
-                        </span>
-                    </Link>
+
+                            <span id="sportClickIcon" key={sport.key}
+                                className="badge rounded-pill bg-success"
+                            >
+                                {sport.title} <br></br> {sport.details}
+                            </span>
+                        </Link>
+                    }
 
                 })}
 
@@ -47,3 +52,8 @@ function AllSports() {
     )
 }
 export default AllSports;
+
+
+// to={"/odds/" + sport.key}
+                        // id="oddsPageLink"
+                        // className={window.location.pathname === "/odds" + sport.key}

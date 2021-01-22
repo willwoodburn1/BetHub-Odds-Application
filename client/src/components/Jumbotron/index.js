@@ -1,15 +1,18 @@
 import React from "react";
+import bhSlogan from "../../images/bhSlogan.png"
+import "./style.css"
 
 
 function Jumbotron({ children }) {
     return (
-        <div
-            style={{ height: 300, clear: "both", paddingTop: 80, textAlign: "center" }}
-            className="jumbotron"
+        <div id="sloganDiv"
+
         >
-            <h1>Record Your Placed Bets Below </h1>
+            <img id="slogan" src={bhSlogan} alt="slogan"></img>
+
+            {/* <h1>Record Your Placed Bets Below </h1>
             <h1> Or</h1>
-            <h1> View Past Bets Made  </h1>
+            <h1> View Past Bets Made  </h1> */}
         </div>
     );
 }

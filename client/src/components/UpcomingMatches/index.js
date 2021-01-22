@@ -6,7 +6,7 @@ import "./style.css"
 function UpcomingMatches() {
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        fetch("https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=au&mkt=h2h&apiKey=dcc8c1b8330bf52bc329e71cda68d7bf")
+        fetch("https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=au&mkt=h2h&apiKey=90f33c13d6dfe00fd515fcd29d8630f6")
             .then(response => response.json())
             .then(data => {
                 if (data) {

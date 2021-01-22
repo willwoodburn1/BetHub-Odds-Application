@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
+
 
 
 
@@ -8,8 +10,8 @@ function ListOfBets({ placedBets }) {
 
 
     return (
-        <>
-            <h1 id="resultdBetsHeader"> View Resulted Bets Here</h1>
+        <div id="listOfBetsDiv">
+            <h1 id="resultedBetsHeader"> View Resulted Bets Here</h1>
             <div className="placedBetsList">
                 {placedBets.map(bet => (
 
@@ -17,32 +19,42 @@ function ListOfBets({ placedBets }) {
 
                         <Link to={{
                             pathname: "/bets/" + bet.id,
-                            greeting: "hello there how are you"
+                            state: {
+                                bet
+                            }
                         }}>
 
                             <div>
                                 <ul className="list-group" >
 
-                                    <li className="betPlacedItem list-group-item"> {bet.selection} vs {bet.opponent}
+                                    <li className="betPlacedItem list-group-item" > {bet.selection} vs {bet.opponent}
                                         <h6> {bet.outcome} : ${bet.winnings} </h6>
-                                        <h6> Placed On :  </h6>
+                                        <h6> Placed On : {bet.createdAt}  </h6>
+
 
                                     </li>
 
                                 </ul>
+
+
                             </div>
 
                         </Link>
 
 
+
+
+
                     </div>
+
 
 
                 ))}
 
 
             </div>
-        </>
+
+        </div>
     )
 
 }

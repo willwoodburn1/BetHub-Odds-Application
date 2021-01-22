@@ -8,6 +8,7 @@ import Ladbrokes from "../../images/ladbrokes.png"
 import Neds from "../../images/neds.png"
 import Pointsbet from "../../images/pointsbet.png"
 import Unibet from "../../images/unibet.png"
+import PlayUp from "../../images/playup.png"
 
 
 function BookieImages() {
@@ -20,6 +21,7 @@ function BookieImages() {
             <img src={Sportsbet} alt="SportsBet"></img>
             <img src={Unibet} alt="UniBet"></img>
             <img src={Betfair} alt="BetFair"></img>
+            <img src={PlayUp} alt="PlayUp"></img>
 
         </div>
     );

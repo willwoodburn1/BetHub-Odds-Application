@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Odds from "./pages/Odds";
 import RecordBets from "./pages/RecordBets";
 import ResultedBets from "./pages/ResultedBets";
+import Chart from "./pages/Chart";
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/odds" component={Odds} />
         <Route exact path="/recordbets" component={RecordBets} />
         <Route exact path="/bets/:id" component={ResultedBets} />
+        <Route exact path="/charts" component={Chart} />
 
 
 

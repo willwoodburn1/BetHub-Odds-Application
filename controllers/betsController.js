@@ -15,6 +15,7 @@ module.exports = function (app) {
             selection: req.body.selection,
             opponent: req.body.opponent,
             // createdAt: req.body.createdAt,
+            // updatedAt: req.body.updatedAt,
             winnings: req.body.winnings,
             betType: req.body.betType,
             bookMaker: req.body.bookMaker,
@@ -44,6 +45,7 @@ module.exports = function (app) {
 
     // PUT route for updating the notes section of past bets
     app.put("/api/bets", function (req, res) {
+        console.log("Request body", req.body);
         db.Bet.update({
             notes: req.body.notes
         }, {
@@ -51,6 +53,7 @@ module.exports = function (app) {
                 id: req.body.id
             }
         }).then(function (dbBet) {
+            console.log(dbBet);
             res.json(dbBet);
         })
             .catch(function (err) {

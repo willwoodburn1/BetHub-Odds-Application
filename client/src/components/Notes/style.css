@@ -1,0 +1,25 @@
+#noteInputForm {
+    margin-left: 30px;
+    width: 35%;
+
+}
+
+#noteInputTitle {
+    margin-left: 30px;
+}
+
+
+.cardNote {
+    position: absolute;
+    right: 20%;
+    height: 200px;
+    width: 350px;
+    top: 70%;
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+
+#noteText {
+    color: black;
+}
+

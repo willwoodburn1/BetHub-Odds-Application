@@ -55,7 +55,7 @@ function Form() {
     }
     console.log(bets)
     return (
-        <div>
+        <div id="formDiv">
             <h1 id="recordBetsTitle"> Record Your Previous Bet Stakes Here</h1>
             <div className="row">
                 <form className="betsInputForm" onSubmit={handleFormSubmit}>

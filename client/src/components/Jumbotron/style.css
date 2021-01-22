@@ -1,0 +1,12 @@
+#slogan {
+    height: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+#sloganDiv {
+    background-color: #3e3e3e;
+}

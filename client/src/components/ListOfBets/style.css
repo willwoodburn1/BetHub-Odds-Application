@@ -1,7 +1,7 @@
 
 .placedBetsList {
     position: absolute;
-    top: 66%;
+    top: 71%;
     right: 1%;
     width: 500px;
     max-height: 340px;
@@ -9,13 +9,16 @@
     overflow-y:scroll;
 }
 
-#resultdBetsHeader {
+#resultedBetsHeader {
     position: absolute;
-    top: 55%;
+    top: 61%;
     right: 7%;
    
 
 }
+
+
+
 
 
 

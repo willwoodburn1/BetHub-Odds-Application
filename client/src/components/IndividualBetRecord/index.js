@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./style.css";
-import { useParams } from "react-router-dom";
-import API from "../../utils/API";
+import { useLocation } from "react-router-dom";
 import Baseball from "../../images/baseball.png"
 import Soccer from "../../images/soccer.png"
 import Basketball from "../../images/basketball.png"
 import Sprinter from "../../images/sprinter.png"
+import Notes from "../Notes";
 
 
-function IndividualBetRecord() {
-    const [bet, setBet] = useState({});
+function IndividualBetRecord(props) {
 
-    const { id } = useParams()
-    useEffect(() => {
-        API.getBet(id)
-        // .then(res => setBet(res.data))
-        // .then(console.log(res.data))
-        // .catch(err => console.log(err));
-    }, [])
+    console.log(props)
 
+    const data = useLocation();
+
+    console.log("Link state data", data);
 
     return (
         <div>
@@ -33,23 +29,25 @@ function IndividualBetRecord() {
                 </span>
 
                 <div className="card-body">
-                    <p className="card-title" id="hey">Selection Bet vs Opponent Bet</p>
+                    <p className="card-title" id="cardTitle">{data.state.bet.selection} vs {data.state.bet.opponent}</p>
 
-                    <h3 className="card-text"> Date Bet Was Placed </h3>
-                    <h3 className="card-text">Book Maker Used </h3>
-                    <h3 className="card-text"> Bet Type </h3>
-                    <h3 className="card-text"> Outcome  </h3>
-                    <h3 className="card-text"> Winnings/Losses  </h3>
+                    <h3 className="card-text"> Bet Placed On: {data.state.bet.createdAt} </h3>
+                    <h3 className="card-text">Book Maker Used: {data.state.bet.bookMaker} </h3>
+                    <h3 className="card-text"> Bet Type: {data.state.bet.betType} </h3>
+                    <h3 className="card-text"> Outcome: {data.state.bet.outcome}  </h3>
+                    <h3 className="card-text"> Winnings/Losses: ${data.state.bet.winnings} </h3>
 
 
-                    <p className="card-text"><small className="text-muted">Last updated on ADD DATE HERE...</small></p>
+                    <p className="card-text"><small className="text-muted">Last updated {data.state.bet.updatedAt} </small></p>
                 </div>
             </div>
 
+            <Notes data={data} />
 
 
 
-        </div>
+
+        </div >
     )
 }
 export default IndividualBetRecord;

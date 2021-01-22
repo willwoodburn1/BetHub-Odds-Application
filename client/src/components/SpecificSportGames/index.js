@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
+import { useLocation } from "react-router-dom";
 import SportOdds from "../SportOdds";
 import TotalsOdds from "../TotalsOdds";
 
@@ -7,12 +8,16 @@ function SpecificSportGames(props) {
 
     console.log(props.name)
 
+    const data = useLocation();
+
+    console.log("Link state data", data);
+
     const [matches, setMatches] = useState([]);
     const [matches2, setMatches2] = useState([]);
     const [currentOddsList, setCurrentOddsList] = useState([]);
     const [currentTotalsList, setCurrentTotalsList] = useState([]);
     useEffect(() => {
-        fetch("https://api.the-odds-api.com/v3/odds/?sport=basketball_nba&region=au&mkt=h2h&apiKey=dcc8c1b8330bf52bc329e71cda68d7bf")
+        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=h2h&apiKey=90f33c13d6dfe00fd515fcd29d8630f6")
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -21,7 +26,7 @@ function SpecificSportGames(props) {
                 }
             });
 
-        fetch("https://api.the-odds-api.com/v3/odds/?sport=basketball_nba&region=au&mkt=totals&apiKey=dcc8c1b8330bf52bc329e71cda68d7bf")
+        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=totals&apiKey=90f33c13d6dfe00fd515fcd29d8630f6")
             .then(response => response.json())
             .then(data => {
                 if (data) {

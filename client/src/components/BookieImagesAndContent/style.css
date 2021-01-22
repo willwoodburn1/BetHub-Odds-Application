@@ -1,3 +1,16 @@
 #bicContent {
     text-align: center;
+    margin-top: 20px;
+}
+
+#bicTitle {
+    margin-bottom: 30px;
+}
+
+#bicH1 {
+    font-size: 50px;
+}
+
+#bicH4 {
+    font-size: 30px;
 }
