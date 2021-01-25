@@ -19,8 +19,16 @@ export default {
     },
 
     updateBet: function (betData) {
-        return axios.put("/api/bets/", betData);
-    }
+        return axios.put("/api/bets", betData);
+    },
+
+    signUp: function (user) {
+        return axios.post("/api/signup", user);
+    },
+
+    login: function (user) {
+        return axios.post("/api/login", user);
+    },
 };
 
 

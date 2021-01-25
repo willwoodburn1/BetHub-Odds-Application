@@ -14,6 +14,7 @@ import Chart from "./pages/Chart";
 
 
 
+
 function App() {
 
   return (
@@ -23,8 +24,8 @@ function App() {
         <Header />
 
 
-        <Route exact path="/api/login" component={Login} />
-        <Route exact path="/api/signup" component={SignUp} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/home" component={Home} />
         <Route path="/odds" component={Odds} />
         <Route exact path="/recordbets" component={RecordBets} />

@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom"
 import SignupCard from "../components/SignupCard";
+
+
 
 function SignUp() {
 
 
     return (
 
+
         <SignupCard />
+
+
 
 
 

@@ -1,11 +1,16 @@
 #noteInputForm {
     margin-left: 30px;
     width: 35%;
+    min-height: 100px;
+
 
 }
 
 #noteInputTitle {
     margin-left: 30px;
+    display: inline-block;
+    color: red;
+    margin-top: 25px;
 }
 
 

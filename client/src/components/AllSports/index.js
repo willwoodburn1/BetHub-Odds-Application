@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 // import SpecificSportGames from "../SpecificSportGames";
+import Logo from "../../images/bhLogoGrey.png"
 
 function AllSports() {
     const [sports, setSports] = useState([]);
@@ -21,6 +22,7 @@ function AllSports() {
     return (
         <div id="allSportsDiv">
             <h1 id="sportsTitles"> Click the Icons Below to View Matches and Odds </h1>
+            <img id="backgroundLogo" src={Logo} alt="BetHub Logo"></img>
             <div>
                 {sports.map(sport => {
 
@@ -37,7 +39,7 @@ function AllSports() {
                         >
 
                             <span id="sportClickIcon" key={sport.key}
-                                className="badge rounded-pill bg-success"
+                                className="badge rounded-pill "
                             >
                                 {sport.title} <br></br> {sport.details}
                             </span>

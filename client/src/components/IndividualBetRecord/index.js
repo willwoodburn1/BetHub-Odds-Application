@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Baseball from "../../images/baseball.png"
 import Soccer from "../../images/soccer.png"
 import Basketball from "../../images/basketball.png"
@@ -41,6 +41,7 @@ function IndividualBetRecord(props) {
                     <p className="card-text"><small className="text-muted">Last updated {data.state.bet.updatedAt} </small></p>
                 </div>
             </div>
+
 
             <Notes data={data} />
 

@@ -1,20 +1,24 @@
 
 .placedBetsList {
     position: absolute;
-    top: 71%;
+    top: 74%;
     right: 1%;
     width: 500px;
-    max-height: 340px;
+    max-height: 405px;
     overflow: hidden;
     overflow-y:scroll;
 }
 
 #resultedBetsHeader {
     position: absolute;
-    top: 61%;
+    top: 65%;
     right: 7%;
-   
+    padding: 5px;
+    color: red;
+}
 
+.betPlacedItem {
+    color: black;
 }
 
 

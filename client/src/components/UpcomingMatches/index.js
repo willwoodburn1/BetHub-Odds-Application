@@ -30,7 +30,8 @@ function UpcomingMatches() {
                 <ul className="list-group list-group-flush">
                     {sports.map(sport => {
                         return <li className="list-group-item"> {sport.sport_nice}
-                            <br></br> {sport.teams[0]} vs {sport.teams[1]} </li>
+                            <br></br> {sport.teams[0]} vs {sport.teams[1]}
+                            <br></br> {sport.commence_time} </li>
 
 
 

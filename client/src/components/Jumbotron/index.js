@@ -1,5 +1,5 @@
 import React from "react";
-import bhSlogan from "../../images/bhSlogan.png"
+import bhSlogan from "../../images/sloganBlack.png"
 import "./style.css"
 
 

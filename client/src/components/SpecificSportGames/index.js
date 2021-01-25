@@ -3,6 +3,7 @@ import "./style.css";
 import { useLocation } from "react-router-dom";
 import SportOdds from "../SportOdds";
 import TotalsOdds from "../TotalsOdds";
+import Layup from "../../images/layup.png";
 
 function SpecificSportGames(props) {
 
@@ -84,6 +85,8 @@ function SpecificSportGames(props) {
                     <h2 id="totalsOddsTitle"> Over/Under (Totals) Odds</h2>
                     <TotalsOdds sites={currentTotalsList} />
                 </div>
+
+                <img id="layupImg" src={Layup} alt="layup"></img>
 
             </div>
 

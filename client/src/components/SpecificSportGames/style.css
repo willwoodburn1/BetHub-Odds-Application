@@ -16,13 +16,27 @@
 
 #h2hTitle {
     text-decoration: underline;
+    padding: 15px;
+    color: red;
+   
 }
 
 .totalsOddsData {
-    margin-left: 90px;
+    /* margin-left: 90px; */
     margin-top: 38px ;
+    
 }
 
 #totalsOddsTitle {
     text-decoration: underline;
+    padding: 15px;
+    color: red;
+    margin-left: 10px;
 }
+
+#layupImg {
+    position: absolute;
+    right: 0px;
+    height: 700px;
+    width: 300px;
+} 

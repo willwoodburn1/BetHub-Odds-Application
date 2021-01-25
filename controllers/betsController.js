@@ -14,18 +14,17 @@ module.exports = function (app) {
         db.Bet.create({
             selection: req.body.selection,
             opponent: req.body.opponent,
-            // createdAt: req.body.createdAt,
-            // updatedAt: req.body.updatedAt,
             winnings: req.body.winnings,
             betType: req.body.betType,
             bookMaker: req.body.bookMaker,
             outcome: req.body.outcome,
             notes: req.body.notes
-        }).then(function (dbBet) {
-            console.log(dbBet);
-            res.json(dbBet);
-
         })
+            .then(function (dbBet) {
+                console.log(dbBet);
+                res.json(dbBet);
+
+            })
             .catch(function (err) {
                 console.log(err);
                 res.json(err);

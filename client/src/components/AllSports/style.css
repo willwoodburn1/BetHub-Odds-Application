@@ -1,24 +1,45 @@
 #allSportsDiv {
     position: absolute;
     width: 70%;
-    top: 400px;
+    top: 450px;
     left: 380px;
+   
+    
 }
 
 #sportsTitles {
     text-align: center;
     margin-bottom: 20px;
+    border: 2px solid green;
+    display: inline-block;
+    margin-left: 150px;
+    padding: 15px;
+    background-color: white;
 }
 
 #sportClickIcon {
-    width: 215px;
+    width: 220px;
     height: 80px;
     text-align: center;
     margin: 14px;
     margin-top: 18px;
     padding-top: 18px;
     padding-bottom: -18px;
-    color: blue;
+    color: black;
+    background-color: red;
+    border: 3px solid white;
     font-size: 13px;
 }
 
+body {
+    background-color: #737373;
+   }
+
+   #backgroundLogo {
+    position: absolute;
+    z-index: -1;
+    right: -85px;
+    margin-top: 100px;
+    height: 1000px;
+    width: 1100px;
+   }

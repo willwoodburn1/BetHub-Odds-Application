@@ -17,4 +17,19 @@
     box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
   }
 
+  #leftLogo {
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    top: 20%;
+  }
+
+  #rightLogo {
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    top: 19%;
+    right: 0px;
+  }
+
   
