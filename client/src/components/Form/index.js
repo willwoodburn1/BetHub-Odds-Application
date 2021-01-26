@@ -24,6 +24,8 @@ function Form() {
             .catch(err => console.log(err));
     };
 
+
+
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
@@ -35,6 +37,7 @@ function Form() {
             API.saveBet({
                 selection: formObject.selection,
                 opponent: formObject.opponent,
+                league: formObject.league,
                 winnings: multiplyOdds(),
                 betType: formObject.betType,
                 bookMaker: formObject.bookMaker,
@@ -68,6 +71,10 @@ function Form() {
                         <div className="input-field ">
                             <input id="opponent" type="text" className="validate" name="opponent" onChange={handleInputChange} />
                             <label htmlFor="opponent">Their Opponent</label>
+                        </div>
+                        <div className="input-field ">
+                            <input id="league" type="text" className="validate" name="league" onChange={handleInputChange} />
+                            <label htmlFor="league">League/Sport</label>
                         </div>
                     </div>
                     <div className="row">

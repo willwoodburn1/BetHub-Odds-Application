@@ -2,8 +2,16 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import Logo from "../../images/bhLogo.png"
+import API from "../../utils/API";
 
 function Header(props) {
+
+    function handleClickEvent(event) {
+        event.preventDefault();
+        API.logout()
+            .then(res => window.location.href = "/login")
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,6 +39,12 @@ function Header(props) {
                             >
                                 <a id="headerRecordBetsBtn"> Record Bets || </a>
                             </Link>
+                            <button
+                                onClick={() => handleClickEvent}
+                            >
+                                Logout
+
+                            </button>
 
                             {/* <p> Welcome {} </p> */}
 

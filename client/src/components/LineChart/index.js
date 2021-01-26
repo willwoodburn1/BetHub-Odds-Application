@@ -1,5 +1,5 @@
 import React from "react";
-// import { Bar } from "react-chartjs-2;"
+// import { Line } from "react-chartjs-2;"
 
 
 
@@ -8,7 +8,7 @@ function LineChart() {
     return (
 
         <div>
-            {/* <Bar
+            {/* <Line
                 data={{
                     labels: ['red', 'blue', 'orange', 'yellow', 'green', 'purple'],
                 }}

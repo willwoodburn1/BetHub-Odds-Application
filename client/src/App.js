@@ -10,6 +10,8 @@ import RecordBets from "./pages/RecordBets";
 import ResultedBets from "./pages/ResultedBets";
 import Chart from "./pages/Chart";
 
+// console.log(process.env.REACT_APP_API_KEY)
+
 
 
 

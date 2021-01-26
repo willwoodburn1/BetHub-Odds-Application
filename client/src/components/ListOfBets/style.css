@@ -4,7 +4,7 @@
     top: 74%;
     right: 1%;
     width: 500px;
-    max-height: 405px;
+    max-height: 455px;
     overflow: hidden;
     overflow-y:scroll;
 }
@@ -21,6 +21,16 @@
     color: black;
 }
 
+#deleteBetBtn {
+    float: right;
+    margin-top: -30px;
+}
+
+#betOutcome {
+    float:right;
+    margin-top: -30px;
+
+}
 
 
 

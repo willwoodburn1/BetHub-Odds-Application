@@ -31,4 +31,24 @@ module.exports = function (app) {
                 res.status(401).json(err);
             });
     });
+
+    // Route for logging user out
+    app.get("/logout", function (req, res) {
+        req.logout();
+    })
+
+    app.get("/api/user_data", function (req, res) {
+        if (!req.user) {
+            // The user is not logged in, send back an empty object
+            res.json({});
+        } else {
+            // Otherwise send back the user's email and id
+            // Sending back a password, even a hashed password, isn't a good idea
+            res.json({
+                username: req.user.username,
+                id: req.user.id
+            });
+        }
+    });
+
 };

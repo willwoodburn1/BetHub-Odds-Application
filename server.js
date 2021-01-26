@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
 var passport = require("./config/passport");
-var compression = require("compression")
+var compression = require("compression");
+// require('dotenv').config()
 
 const app = express();
 app.use(cors());
@@ -27,6 +28,7 @@ app.use(compression());
 // Routes
 require("./controllers/user-controller")(app);
 require("./controllers/betsController")(app);
+require("./controllers/notesController")(app);
 
 
 // app.listen(PORT, function () {

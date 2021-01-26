@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 // import SpecificSportGames from "../SpecificSportGames";
 import Logo from "../../images/bhLogoGrey.png"
+// require('dotenv').config()
 
 function AllSports() {
     const [sports, setSports] = useState([]);

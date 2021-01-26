@@ -14,18 +14,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        // createdAt: {
-        //     type: DataTypes.DATE,
-        //     get() {
-        //         return moment(this.getDataValue('createdAt')).format('DD/MM/YYYY h:mm:ss');
-        //     }
-        // },
-        // updatedAt: {
-        //     type: DataTypes.DATE,
-        //     get() {
-        //         return moment(this.getDataValue('updatedAt')).format('DD/MM/YYYY h:mm:ss');
-        //     }
-        // },
+        league: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
         winnings: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -36,12 +31,19 @@ module.exports = function (sequelize, DataTypes) {
         bookMaker: {
             type: DataTypes.STRING
         },
-        notes: {
-            type: DataTypes.TEXT
-        },
+        // notes: {
+        //     type: DataTypes.TEXT
+        // },
         outcome: {
             type: DataTypes.STRING
         }
     });
+
+    Bet.associate = function (models) {
+        Bet.hasMany(models.Note, {
+            onDelete: "cascade"
+        });
+    };
+
     return Bet;
 };

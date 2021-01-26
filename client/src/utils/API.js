@@ -22,6 +22,35 @@ export default {
         return axios.put("/api/bets", betData);
     },
 
+
+    // Gets all notes 
+    getNotes: function () {
+        return axios.get("/api/notes")
+    },
+    // Gets the note with given id (the one selected)
+    getNote: function (id) {
+        return axios.get("/api/notes/" + id);
+    },
+    // Delete the note with given id
+    deleteNote: function (id) {
+        return axios.delete("/api/notes/" + id);
+    },
+    // Saves a new note to the database
+    saveNote: function (noteData) {
+        return axios.post("/api/notes", noteData);
+    },
+
+    updateNote: function (noteData) {
+        return axios.put("/api/notes", noteData);
+    },
+
+
+
+
+
+
+
+
     signUp: function (user) {
         return axios.post("/api/signup", user);
     },
@@ -29,6 +58,16 @@ export default {
     login: function (user) {
         return axios.post("/api/login", user);
     },
+
+    logout: function (user) {
+        return axios.get("/api/logout", user);
+    }
+
+    // getUser: async function () {
+    //     const data = await axios.get("/api/user_data")
+    //     console.log(data.data)
+    //     return data.data
+    // }
 };
 
 
