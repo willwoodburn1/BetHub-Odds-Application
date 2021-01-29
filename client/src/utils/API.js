@@ -21,11 +21,12 @@ export default {
     updateBet: function (betData) {
         return axios.put("/api/bets", betData);
     },
-
-
     // Gets all notes 
     getNotes: function () {
         return axios.get("/api/notes")
+    },
+    getNotesByBet: function (id) {
+        return axios.get("/api/notes/" + id)
     },
     // Gets the note with given id (the one selected)
     getNote: function (id) {

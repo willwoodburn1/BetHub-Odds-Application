@@ -18,9 +18,7 @@ function Form() {
 
     function loadBets() {
         API.getBets()
-            .then(res =>
-                setBets(res.data)
-            )
+            .then(res => setBets(res.data))
             .catch(err => console.log(err));
     };
 

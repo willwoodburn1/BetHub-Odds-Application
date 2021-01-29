@@ -4,9 +4,12 @@ import API from "../../utils/API";
 
 
 
-function Notes() {
+function Notes(props) {
 
-    const [notes, setNotes] = useState([]);
+    console.log("this is props", props);
+    console.log("the notes for this bet", props.data.state.bet.Notes)
+
+    const [notes, setNotes] = useState(props.data.state.bet.Notes || []);
     const [formObject, setFormObject] = useState({});
 
     useEffect(() => {
@@ -14,7 +17,7 @@ function Notes() {
     }, [])
 
     function loadNotes() {
-        API.getNotes()
+        API.getNotesByBet(props.data.state.bet.id)
             .then(res =>
                 setNotes(res.data)
             )
@@ -23,6 +26,13 @@ function Notes() {
 
     function deleteNote(id) {
         API.deleteNote(id)
+            .then(() => {
+                // Set the new state, filter the current notes and remove the note with the matching id
+                // use the filter method (notes.filter())
+                setNotes(notes.filter(note => {
+                    return note.id !== id
+                }))
+            })
             .catch(err => console.log(err));
     }
 
@@ -35,10 +45,13 @@ function Notes() {
         event.preventDefault();
         if (formObject.title && formObject.content) {
             API.saveNote({
+                betId: props.data.state.bet.id,
                 title: formObject.title,
                 content: formObject.content
             })
-                .then(res => loadNotes())
+                .then(res => {
+                    setNotes([...notes, res.data])
+                })
                 .catch(err => console.log(err))
         }
     };
@@ -57,20 +70,28 @@ function Notes() {
 
             <div>
                 {notes.map(note => {
-                    console.log(note)
                     return (
-                        <div className="noteDiv">
-                            <div>
-                                <div className="card cardNote ">
-                                    <div className="card-content white-text">
-                                        <h3> {note.title} </h3>
-                                        <p id="noteText"> {note.content}  </p>
-                                        <button id="deleteBetBtn" onClick={() => deleteNote(note.id)}> X </button>
-                                    </div>
-
-                                </div>
+                        <div className="card" id="noteCard" >
+                            <div className="card-body" id="noteCardBody">
+                                <h2 className="card-title"> {note.title} </h2>
+                                <h4 className="card-subtitle mb-2 text-muted"> Created At: {note.createdAt} </h4>
+                                <h4 className="card-text">{note.content}</h4>
+                                <button id="deleteBetBtn" onClick={() => deleteNote(note.id)}> X </button>
                             </div>
                         </div>
+
+                        // <div className="noteDiv">
+                        //     <div>
+                        //         <div className="card cardNote ">
+                        //             <div className="card-content white-text">
+                        //                 <h3> {note.title} </h3>
+                        //                 <p id="noteText"> {note.content}  </p>
+                        //                 <button id="deleteBetBtn" onClick={() => deleteNote(note.id)}> X </button>
+                        //             </div>
+
+                        //         </div>
+                        //     </div>
+                        // </div>
                     )
 
                 })}

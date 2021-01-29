@@ -15,16 +15,30 @@
 
 
 .cardNote {
-    position: absolute;
-    right: 20%;
+    position: relative;
     height: 200px;
     width: 350px;
-    top: 70%;
     background-color: lightblue;
     border: 2px solid blue;
 }
 
 #noteText {
+    color: black;
+}
+
+#noteCard {
+    width: 400px;
+    display: inline-block;
+    left: 39%;
+    
+}
+
+#noteCardBody {
+    width: 400px;
+
+}
+
+.card-title {
     color: black;
 }
 

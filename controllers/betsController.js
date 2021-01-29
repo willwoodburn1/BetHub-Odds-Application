@@ -5,8 +5,8 @@ module.exports = function (app) {
     // GET route for retrieving all bets placed
     app.get("/api/bets", function (req, res) {
         db.Bet.findAll({
-            order: [["createdAt", "DESC"]]
-            // include: [db.Note]
+            order: [["createdAt", "DESC"]],
+            include: [db.Note]
         }).then(function (dbBet) {
             res.json(dbBet);
         });
@@ -14,9 +14,9 @@ module.exports = function (app) {
 
     // May need to delete
     // app.get("/api/bets/:id", function (req, res) {
-        // Here we add an "include" property to our options in our findOne query
-        // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Post
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
     //     db.Bet.findOne({
     //         where: {
     //             id: req.params.id

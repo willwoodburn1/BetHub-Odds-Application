@@ -16,6 +16,7 @@ module.exports = function (sequelize, DataTypes) {
     Note.associate = function (models) {
         Note.belongsTo(models.Bet, {
             foreignKey: {
+                name: "betId",
                 allowNull: false
             }
         });

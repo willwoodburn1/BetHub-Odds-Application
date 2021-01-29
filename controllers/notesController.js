@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.get("/api/notes", function (req, res) {
         let query = {};
         if (req.body.bet_id) {
-            query.BetId = req.query.bet_id;
+            query.betId = req.query.bet_id;
         }
         db.Note.findAll({
             where: query
@@ -16,13 +16,23 @@ module.exports = function (app) {
     });
 
     // GET route for retrieving a single note
-    app.get("/api/notes/:id", function (req, res) {
+    app.get("/api/note/:id", function (req, res) {
         db.Note.findOne({
             where: {
                 id: req.params.id
             }
         }).then(function (dbBet) {
             res.json(dbBet)
+        });
+    });
+
+    app.get("/api/notes/:id", function (req, res) {
+        db.Note.findAll({
+            where: {
+                betId: req.params.id
+            }
+        }).then(function (notes) {
+            res.json(notes)
         });
     });
 
@@ -36,13 +46,12 @@ module.exports = function (app) {
 
     app.post("/api/notes", function (req, res) {
         db.Note.create({
+            betId: req.body.betId,
             title: req.body.title,
             content: req.body.content
         })
             .then(function (dbNote) {
-                console.log(dbNote);
                 res.json(dbNote);
-
             })
             .catch(function (err) {
                 console.log(err);
