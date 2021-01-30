@@ -3,7 +3,7 @@ import "./style.css";
 import { useLocation } from "react-router-dom";
 import SportOdds from "../SportOdds";
 import TotalsOdds from "../TotalsOdds";
-import Layup from "../../images/layup.png";
+import Layup from "../../images/blueJordan.png";
 
 function SpecificSportGames(props) {
 
@@ -61,7 +61,7 @@ function SpecificSportGames(props) {
                 <div className="list-group specificSportsMatchesList">
                     <a href="#" className="list-group-item list-group-item-action active" aria-current="true">
                         View the Odds for the Upcoming Matches Here
-                </a>
+                    </a>
                     {matches.map((match, index) => {
                         return (
                             <button
@@ -70,6 +70,7 @@ function SpecificSportGames(props) {
                                 key={index}>
                                 {match.teams[0]} vs {match.teams[1]}
                             </button>
+
                         )
 
                     })}

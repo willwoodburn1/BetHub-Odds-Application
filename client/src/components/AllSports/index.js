@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 // import SpecificSportGames from "../SpecificSportGames";
-import Logo from "../../images/bhLogoGrey.png"
+import Logo from "../../images/lightBlueLogo.png"
 // require('dotenv').config()
 
 function AllSports() {

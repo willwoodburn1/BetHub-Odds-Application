@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API";
-import Logo from "../../images/bhLogoGrey.png";
+import Logo from "../../images/lightBlueLogo.png";
 
 function SignupCard() {
 

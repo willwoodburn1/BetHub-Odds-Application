@@ -2,6 +2,9 @@
     width: 25%;
     margin-top: 50px;
     text-align: center;
+    overflow: hidden;
+    overflow-y:scroll;
+    max-height: 600px;
 }
 
 #oddsContent {
@@ -40,3 +43,5 @@
     height: 700px;
     width: 300px;
 } 
+
+

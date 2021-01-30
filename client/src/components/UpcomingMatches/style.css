@@ -8,6 +8,14 @@
    
 }
 
+.card-title {
+    color: white;
+}
+
+#titleMatchUp {
+    color: white;
+}
+
 
 .upcoming-matches-card-body {
     border: 1px solid blue;
@@ -20,7 +28,7 @@
 .list-group {
     overflow: hidden;
     overflow-y:scroll;
-    max-height: 1100px;
+    max-height: 980px;
 }
 
 

@@ -10,13 +10,20 @@
     color: red;
 }
 
+
 #recordBetsTitle {
     margin-left: 150px;
     color: red;
+    text-decoration: underline;
 }
 
 #formDiv {
     margin-top: 30px;
-    
-    
 }
+
+#formText {
+    color: red;
+    font-size: 18px;
+}
+
+

@@ -74,11 +74,12 @@ function Notes(props) {
                         <div className="card" id="noteCard" >
                             <div className="card-body" id="noteCardBody">
                                 <h2 className="card-title"> {note.title} </h2>
-                                <h4 className="card-subtitle mb-2 text-muted"> Created At: {note.createdAt} </h4>
+                                <h6 className="card-subtitle mb-2 text-muted"> Created At: {note.createdAt} </h6>
                                 <h4 className="card-text">{note.content}</h4>
                                 <button id="deleteBetBtn" onClick={() => deleteNote(note.id)}> X </button>
                             </div>
                         </div>
+
 
                         // <div className="noteDiv">
                         //     <div>

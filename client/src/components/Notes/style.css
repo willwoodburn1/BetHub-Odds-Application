@@ -27,18 +27,22 @@
 }
 
 #noteCard {
-    width: 400px;
-    display: inline-block;
-    left: 39%;
-    
+    /* display: inline-block; */
+    left: 19%;
+    max-width: 450px;
+    bottom: 420px;
+    margin-bottom: -45px;   
+    border: 2px solid red; 
 }
 
-#noteCardBody {
-    width: 400px;
 
-}
+
 
 .card-title {
     color: black;
+}
+
+#notesDisplay {
+    display: inline-flex;
 }
 

@@ -61,34 +61,34 @@ function Form() {
             <div className="row">
                 <form className="betsInputForm" onSubmit={handleFormSubmit}>
                     <div className="row">
-                        <div className="input-field ">
+                        <div className="input-field">
                             <input id="your_selection" type="text" className="validate" name="selection" onChange={handleInputChange} />
-                            <label htmlFor="your_selection">Your Selection</label>
+                            <label id="formText" htmlFor="your_selection">Your Selection</label>
                         </div>
 
-                        <div className="input-field ">
+                        <div className="input-field">
                             <input id="opponent" type="text" className="validate" name="opponent" onChange={handleInputChange} />
-                            <label htmlFor="opponent">Their Opponent</label>
+                            <label id="formText" htmlFor="opponent">Their Opponent</label>
                         </div>
                         <div className="input-field ">
                             <input id="league" type="text" className="validate" name="league" onChange={handleInputChange} />
-                            <label htmlFor="league">League/Sport</label>
+                            <label id="formText" htmlFor="league">League/Sport</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s4">
                             <input id="ammountWagered" type="text" className="validate" onChange={e => setWagered(e.target.value)} />
-                            <label htmlFor="ammountWagered">Ammount Wagered</label>
+                            <label id="formText" htmlFor="ammountWagered">Ammount Wagered</label>
                         </div>
 
                         <div className="input-field col s4">
                             <input id="oddsReceived" type="text" className="validate" onChange={e => setOddReceived(e.target.value)} />
-                            <label htmlFor="oddsReceived">Odds Received</label>
+                            <label id="formText" htmlFor="oddsReceived">Odds Received</label>
                         </div>
 
                         <div className="input-field col s4" id="potentialWinningsDisplay">
                             <div id="potentialWinnings" placeholder="Potential Winnings" className="validate" name="winnings" > {multiplyOdds()} </div>
-                            <label htmlFor="potentialWinnings" id="potentialWinningsText"></label>
+                            <label id="formText" htmlFor="potentialWinnings" id="potentialWinningsText"></label>
                         </div>
 
 
@@ -124,7 +124,7 @@ function Form() {
                     <button
                         type="submit"
                         disabled={!formObject.selection || !formObject.opponent || !wagered || !oddReceived || !formObject.outcome}
-                        className="btn btn-outline-success"
+                        className="btn btn-outline-success "
                     >
                         Log Bet
                     </button>

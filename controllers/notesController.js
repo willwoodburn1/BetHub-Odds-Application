@@ -29,7 +29,7 @@ module.exports = function (app) {
     app.get("/api/notes/:id", function (req, res) {
         db.Note.findAll({
             where: {
-                betId: req.params.id
+                betId: req.params.id,
             }
         }).then(function (notes) {
             res.json(notes)
