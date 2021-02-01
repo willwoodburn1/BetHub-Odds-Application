@@ -6,26 +6,28 @@ import API from "../../utils/API";
 
 
 
-function ListOfBets({ placedBets }) {
+function ListOfBets({ placedBets, deleteFunction }) {
 
-    const [earnings, setEarnings] = useState(0);
 
-    function recordEarnings() {
-        setEarnings(placedBets.winnings)
-    }
 
-    function deleteBet(id) {
-        API.deleteBet(id)
-            .catch(err => console.log(err));
-    }
 
-    function profit() {
-        console.log(placedBets.winnings)
-        placedBets.winnings.map(bet => {
-            bet.reduce(function (a, b) {
-                return a + b;
-            }, 0)
-        })
+
+
+    function earnings() {
+        let wins = placedBets.filter(bet => bet.outcome === "win")
+        let totalWins = 0
+        if (wins.length > 0) {
+            totalWins = wins.reduce((acc, win) => acc + win.winnings, 0)
+        }
+
+        let losses = placedBets.filter(bet => bet.outcome === "loss")
+        let totalLosses = 0
+        if (losses.length > 0) {
+            totalLosses = losses.reduce((acc, loss) => acc - loss.winnings, 0)
+        }
+
+
+        return totalWins + totalLosses
     }
 
 
@@ -37,31 +39,38 @@ function ListOfBets({ placedBets }) {
 
                     < div className="list-group" key={bet.id} >
 
-                        <Link to={{
-                            pathname: "/bets/" + bet.id,
-                            state: {
-                                bet
-                            }
-                        }}>
 
-                            <div>
-                                <ul className="list-group" >
 
-                                    <li className="betPlacedItem list-group-item" > {bet.league}: <br></br>
+                        <div>
+                            <ul className="list-group" >
+
+
+                                <li className="betPlacedItem list-group-item" >
+                                    <Link to={{
+                                        pathname: "/bets/" + bet.id,
+                                        state: {
+                                            bet
+                                        }
+                                    }}>
+
+                                        {bet.league}: <br></br>
                                         {bet.selection} vs {bet.opponent}
                                         <h3 id="betOutcome"> {bet.outcome} : ${bet.winnings} </h3>
                                         <h6> Placed On : {bet.createdAt}  </h6>
-                                        <button id="deleteBetBtn" onClick={e => e.preventDefault()} onClick={() => deleteBet(bet.id)}> X </button>
+                                    </Link>
+                                    <button id="deleteBetBtn" onClick={() => deleteFunction(bet.id)}> X </button>
 
 
-                                    </li>
+                                </li>
 
-                                </ul>
+                            </ul>
 
 
-                            </div>
+                        </div>
 
-                        </Link>
+
+
+
 
 
 
@@ -74,12 +83,22 @@ function ListOfBets({ placedBets }) {
 
                 ))}
 
-                <div> {earnings} </div>
+
+
+
+
 
 
             </div>
 
-        </div>
+            <div id="totalWinningsDiv">
+                <ul class="list-group">
+                    <li class="list-group-item active" aria-current="true">Total Profit/Losses: ${earnings()}</li>
+                </ul>
+            </div>
+
+
+        </div >
     )
 
 }

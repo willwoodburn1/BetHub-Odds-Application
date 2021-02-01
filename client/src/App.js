@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 // import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -25,14 +25,15 @@ function App() {
       <div>
         <Header />
 
-
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/home" component={Home} />
-        <Route path="/odds" component={Odds} />
-        <Route exact path="/recordbets" component={RecordBets} />
-        <Route exact path="/bets/:id" component={ResultedBets} />
-        <Route exact path="/charts" component={Chart} />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/home" component={Home} />
+          <Route path="/odds" component={Odds} />
+          <Route exact path="/recordbets" component={RecordBets} />
+          <Route exact path="/bets/:id" component={ResultedBets} />
+          <Route exact path="/charts" component={Chart} />
+        </Switch>
 
 
 

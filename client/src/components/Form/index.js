@@ -19,8 +19,14 @@ function Form() {
     function loadBets() {
         API.getBets()
             .then(res => setBets(res.data))
-            .catch(err => console.log(err));
+            .catch(() => window.location.href = "/");
     };
+
+    function deleteBet(id) {
+        API.deleteBet(id)
+            .then(loadBets())
+            .catch(err => console.log(err));
+    }
 
 
 
@@ -133,7 +139,7 @@ function Form() {
             </div>
 
 
-            <ListOfBets placedBets={bets} />
+            <ListOfBets placedBets={bets} deleteFunction={deleteBet} />
 
         </div >
     )

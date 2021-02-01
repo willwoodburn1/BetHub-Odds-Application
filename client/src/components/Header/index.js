@@ -7,9 +7,10 @@ import API from "../../utils/API";
 function Header(props) {
 
     function handleClickEvent(event) {
+        console.log(event)
         event.preventDefault();
         API.logout()
-            .then(res => window.location.href = "/login")
+            .then(res => window.location.href = "/")
     }
 
     return (
@@ -39,12 +40,14 @@ function Header(props) {
                             >
                                 <a id="headerRecordBetsBtn"> Record Bets || </a>
                             </Link>
-                            <button
-                                onClick={() => handleClickEvent}
+                            <a
+                                id="logoutBtn"
+                                type="submit"
+                                onClick={handleClickEvent}
                             >
                                 Logout
 
-                            </button>
+                            </a>
 
                             {/* <p> Welcome {} </p> */}
 

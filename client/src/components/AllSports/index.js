@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-// import SpecificSportGames from "../SpecificSportGames";
 import Logo from "../../images/lightBlueLogo.png"
 // require('dotenv').config()
 
 function AllSports() {
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=90f33c13d6dfe00fd515fcd29d8630f6")
+        let APIKey = process.env.REACT_APP_API_KEY
+        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=" + APIKey)
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -57,6 +57,3 @@ function AllSports() {
 export default AllSports;
 
 
-// to={"/odds/" + sport.key}
-                        // id="oddsPageLink"
-                        // className={window.location.pathname === "/odds" + sport.key}

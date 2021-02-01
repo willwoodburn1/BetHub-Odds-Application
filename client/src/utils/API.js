@@ -62,6 +62,10 @@ export default {
 
     logout: function (user) {
         return axios.get("/api/logout", user);
+    },
+
+    isLoggedIn: function () {
+        return axios.get("/api/isloggedin")
     }
 
     // getUser: async function () {

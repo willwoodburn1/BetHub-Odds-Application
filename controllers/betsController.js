@@ -1,9 +1,10 @@
 const db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated")
 
 module.exports = function (app) {
 
     // GET route for retrieving all bets placed
-    app.get("/api/bets", function (req, res) {
+    app.get("/api/bets", isAuthenticated, function (req, res) {
         db.Bet.findAll({
             order: [["createdAt", "DESC"]],
             include: [db.Note]

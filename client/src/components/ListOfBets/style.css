@@ -32,6 +32,14 @@
 
 }
 
+#totalWinningsDiv {
+    float: right;
+    display: inline-block;
+    margin-right: 19%;
+    margin-top: -42px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
 
 
 

@@ -1,5 +1,6 @@
 const db = require("../models");
 const passport = require("../config/passport")
+const isAuthenticated = require("../config/middleware/isAuthenticated")
 
 module.exports = function (app) {
 
@@ -33,8 +34,13 @@ module.exports = function (app) {
     });
 
     // Route for logging user out
-    app.get("/logout", function (req, res) {
+    app.get("/api/logout", function (req, res) {
         req.logout();
+        res.status(200).end()
+    })
+
+    app.get("/api/isloggedin", isAuthenticated, function (req, res) {
+        res.status(200).end()
     })
 
     app.get("/api/user_data", function (req, res) {

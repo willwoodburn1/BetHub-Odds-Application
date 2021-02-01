@@ -33,5 +33,15 @@
 }
 
 .navbar-nav {
-    margin-left: 200px;
+    margin-left: 700px;
+}
+
+#logoutBtn {
+    margin-left: 15px;
+    font-size: 30px;
+    color: blue;
+}
+
+#logoutBtn:hover {
+    text-decoration: underline;
 }
