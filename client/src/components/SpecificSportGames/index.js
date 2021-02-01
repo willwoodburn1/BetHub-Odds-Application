@@ -18,8 +18,8 @@ function SpecificSportGames(props) {
     const [currentOddsList, setCurrentOddsList] = useState([]);
     const [currentTotalsList, setCurrentTotalsList] = useState([]);
     useEffect(() => {
-        let APIKey = process.env.REACT_APP_API_KEY
-        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=h2h&apiKey=" + APIKey)
+        // let APIKey = process.env.REACT_APP_API_KEY
+        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=h2h&apiKey=12c615179c088aebf6a82efb02f99178")
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -28,7 +28,7 @@ function SpecificSportGames(props) {
                 }
             });
 
-        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=totals&apiKey=" + APIKey)
+        fetch("https://api.the-odds-api.com/v3/odds/?sport=" + data.state.sport.key + "&region=au&mkt=totals&apiKey=12c615179c088aebf6a82efb02f99178")
             .then(response => response.json())
             .then(data => {
                 if (data) {

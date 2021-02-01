@@ -17,7 +17,7 @@ function SignupCard() {
                 username: username,
                 password: password
             })
-                .then(res => window.location.href = "/login")
+                .then(res => window.location.href = "/")
                 .catch(err => console.log(err));
         }
         else {
@@ -52,7 +52,7 @@ function SignupCard() {
                 <div> {error}</div>
 
                 <h5>
-                    <Link to="/login">Back to Login</Link>
+                    <Link to="/">Back to Login</Link>
                 </h5>
 
             </div>

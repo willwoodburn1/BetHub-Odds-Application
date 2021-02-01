@@ -7,8 +7,8 @@ import Logo from "../../images/lightBlueLogo.png"
 function AllSports() {
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        let APIKey = process.env.REACT_APP_API_KEY
-        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=" + APIKey)
+        // let APIKey = process.env.REACT_APP_API_KEY
+        fetch("https://api.the-odds-api.com/v3/sports/?apiKey=12c615179c088aebf6a82efb02f99178")
             .then(response => response.json())
             .then(data => {
                 if (data) {
